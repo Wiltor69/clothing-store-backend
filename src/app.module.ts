@@ -19,6 +19,10 @@ import { SequelizeModule } from '@nestjs/sequelize';
         database: configService.get<string>('DB_NAME'),
         autoLoadModels: true,
         synchronize: true, 
+        define: {
+          charset: 'utf8',
+          collate: 'utf8_general_ci',
+        },
       }),
     }),
   ],
